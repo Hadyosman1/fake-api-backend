@@ -39,7 +39,7 @@ export class UsersService {
   async isAvailable(dto: ValidateUserDto) {
     let isAvailable = false;
     if (dto.email) {
-      isAvailable = (await this.findByEmail(dto.email)) === undefined;
+      isAvailable = (await this.findByEmail(dto.email)) === null;
     }
     return { isAvailable };
   }
